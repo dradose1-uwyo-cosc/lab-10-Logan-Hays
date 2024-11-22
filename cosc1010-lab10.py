@@ -1,8 +1,8 @@
-# Your Name Here
+# Logan Hays
 # UWYO COSC 1010
-# Submission Date
-# Lab XX
-# Lab Section: 
+# 11/21/24
+# Lab 10
+# Lab Section: 13
 # Sources, people worked with, help given to: 
 # your
 # comments
@@ -43,3 +43,33 @@ def get_hash(to_hash):
 # Hash each individual password and compare it against the stored hash.
 # - When you find the match, print the plaintext version of the password.
 # - End your loop.
+
+
+path_rockyou = Path('rockyou.txt')
+try:
+    passwords_list = path_rockyou.read_text()
+except:
+    print("Unable to read rockyou.txt")
+else:
+    passwords = passwords_list.splitlines()
+
+
+path_hash = Path('hash')
+try:
+    hash = path_hash.read_text()
+except:
+    print("hash not found")
+
+for password in passwords:
+    hashed_password = get_hash(password)
+    if hashed_password == hash:
+        print(f"The password was {password}")
+
+
+        
+
+        
+
+        
+
+
